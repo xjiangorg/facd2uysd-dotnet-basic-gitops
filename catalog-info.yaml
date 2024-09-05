@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: facd2uysd-dotnet-basic-gitops
+  description: This is GitOps manifest for facd2uysd-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: facd2uysd-dotnet-basic
+    janus-idp.io/tekton: facd2uysd-dotnet-basic
+    backstage.io/kubernetes-id: facd2uysd-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:facd2uysd-dotnet-basic
